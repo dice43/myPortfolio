@@ -664,9 +664,17 @@ nav a:hover .tooltip {
         font-size: 1.8rem;
     }
 
+    nav {
+        width: 90%;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        padding: 0.5rem, 1rem;
+    }
+
     /* Stack nav items vertically on small screens */
     nav ul {
-        flex-direction: column;
+        flex-direction: wrap;
         gap: 1rem;
     }
 
@@ -683,17 +691,19 @@ nav a:hover .tooltip {
     }
 
     .project-card {
-        width: 90%;
+        width: 80%;
     }
 
     /* Adjust skills section */
     .skills-section {
         grid-template-columns: 1fr;
+
         gap: 1rem;
     }
 
     .skills-block {
         width: 100%;
+        margin: auto;
     }
 
     /* Make about items responsive */
