@@ -685,6 +685,11 @@ nav a:hover .tooltip {
     .skills-header-container {
         padding: 1rem;
     }
+    
+    .about-container {
+        width: 90%;
+        overflow-x: hidden;
+    }
 
     /* Stack project cards vertically */
     .projects-container {
@@ -710,8 +715,13 @@ nav a:hover .tooltip {
         margin: auto;
     }
 
-    .skills-card {
+    .skills-container {
         width: 80%;
+        margin: auto;
+    }
+
+    .skills-card {
+        width: 60%;
     }
 
     .skill-card:hover {
