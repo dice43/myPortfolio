@@ -666,7 +666,7 @@ nav a:hover .tooltip {
 
     nav {
         width: max-content;
-        top: 0;
+        top: 1rem;
         left: 50%;
         transform: translateX(-50%);
         padding: 0.5rem, 1rem;
@@ -708,6 +708,14 @@ nav a:hover .tooltip {
     .skills-block {
         width: 80%;
         margin: auto;
+    }
+
+    .skills-card {
+        width: 80%;
+    }
+
+    .skill-card:hover {
+        box-shadow: none !important; /* Ensures it doesn't stay active */
     }
 
     /* Make about items responsive */
