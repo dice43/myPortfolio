@@ -652,3 +652,64 @@ nav a:hover .tooltip {
     transform: scale(1.2);
     color: var(--hover-color);
 }
+
+/* Mobile-friendly styles */
+@media (max-width: 768px) {
+    /* Make hero section text smaller */
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+
+    .hero h2 {
+        font-size: 1.8rem;
+    }
+
+    /* Stack nav items vertically on small screens */
+    nav ul {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    /* Reduce padding for sections */
+    .about-header-container,
+    .skills-header-container {
+        padding: 1rem;
+    }
+
+    /* Stack project cards vertically */
+    .projects-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .project-card {
+        width: 90%;
+    }
+
+    /* Adjust skills section */
+    .skills-section {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    .skills-block {
+        width: 100%;
+    }
+
+    /* Make about items responsive */
+    .about-item {
+        width: 90%;
+        padding: 15px;
+    }
+
+    /* Reduce button padding */
+    .button {
+        padding: 8px 16px;
+        font-size: 14px;
+    }
+
+    /* Adjust footer */
+    .footer {
+        padding: 1rem;
+    }
+}
