@@ -665,7 +665,7 @@ nav a:hover .tooltip {
     }
 
     nav {
-        width: 90%;
+        width: max-content;
         top: 0;
         left: 50%;
         transform: translateX(-50%);
@@ -675,7 +675,9 @@ nav a:hover .tooltip {
     /* Stack nav items vertically on small screens */
     nav ul {
         flex-direction: wrap;
-        gap: 1rem;
+        justify-content: center;
+        gap: 0.8rem;
+        padding: 0;
     }
 
     /* Reduce padding for sections */
@@ -696,9 +698,11 @@ nav a:hover .tooltip {
 
     /* Adjust skills section */
     .skills-section {
+        align-items: center;
+        justify-content: center;
         grid-template-columns: 1fr;
-
         gap: 1rem;
+        padding: 1rem;
     }
 
     .skills-block {
