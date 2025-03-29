@@ -716,12 +716,12 @@ nav a:hover .tooltip {
     }
 
     .skills-container {
-        width: 80%;
+        width: 60%;
         margin: auto;
     }
 
     .skills-card {
-        width: 60%;
+        width: 50%;
     }
 
     .skill-card:hover {
