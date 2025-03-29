@@ -1,0 +1,654 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Source+Sans+Pro:wght@300;400;600&display=swap');
+
+:root {
+    --font-body: "Source Sans Pro", sans-serif;
+    --font-header: "Montserrat", sans-serif;
+    --normal-font: 400;
+    --bold-font: 700;
+    --bolder-font: 900;
+    --bg-color: #181818;
+    --hover-color: #d32f2f;
+    --border-color: rgba(255, 255, 255, 0.2);
+    --button-color: #d32f2f;
+    --card-background: #333333;
+    --icon-color: #f44336;
+    --text-color: #f5f5f5;
+    --text-color2: #f44336;
+    --primary-shadow: #f44336;
+    --bottom-margin:0.5rem;
+    --bottom-margin-2:1rem;
+    --line-height:1.7rem;
+    --transition:0.3s;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 3.5rem;
+    height: auto;
+    overflow-y: auto;
+}
+
+/*Resets*/
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+
+ul {
+    list-style-type: none;
+}
+
+a {
+    text-decoration: none;
+    color: var(--text-color);
+}
+
+a:hover {
+    color:var(--hover-color);
+}
+
+.bold {
+    font-weight: var(--bold-font);
+}
+
+.accent-text {
+    font-weight: var(--bold-font);
+    color: var(--text-color2);
+}
+
+p {
+    font-family: var(--font-body);
+}
+
+body {
+    font-family: var(--font-body);
+    background-color: var(--bg-color);
+    background-size: cover;
+    background-attachment: scroll;
+    height: auto;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+}
+
+main {
+    flex-grow: 1;
+    padding-bottom: 1rem;
+}
+
+nav {
+    position: sticky;
+    top: 1rem;
+    left: 50%;
+    width: fit-content;
+    transform: translateX(-50%);
+    background-color: var(--bg-color);
+    background: transparent;
+    backdrop-filter: blur(10px);
+    padding: 0.5rem;
+    border-radius: 30px; 
+    border: 2px solid var(--border-color); 
+    z-index: 1000;
+    display: flex;
+    justify-content: center;
+    transition: transform 0.3s ease;
+}
+
+nav:hover {
+    transform: translateX(-50%) scale(1.05);
+}
+
+nav h1{
+    font-size: 70%;
+}
+
+nav a{
+    transition: transform var(--transition) ease;
+    position: relative;
+}
+
+nav a:hover i{
+    color: var(--hover-color);
+}
+
+nav a i, nav a img {
+    transition: transform 0.3s ease; 
+    color: var(--icon-color);
+}
+
+nav a:hover i, nav a:hover img {
+    transform: scale(1.2); 
+}
+
+nav ul{
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    gap: 1.9rem;
+}
+
+nav ul li{
+    font-weight: var(--bold-font);
+}
+
+nav ul li a{
+    color: var(--text-color);;
+    font-size: 130%;
+}
+
+/* Tooltip styles */
+nav a .tooltip {
+    visibility: hidden; 
+    position: absolute;
+    top: 165%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #ffffff;
+    color: #000000;
+    padding: 0.4rem;
+    
+    border-radius: 5px;
+    font-size: 0.9rem;
+    font-weight: var(--normal-font);
+    font-family: var(--font-header);
+    opacity: 0;
+    transition: opacity 0.3s ease, visibility 0s 0.3s; 
+    z-index: 10;
+}
+
+nav a:hover .tooltip {
+    visibility: visible;
+    opacity: 1;
+    transition: opacity 0.3s ease, visibility 0s 0s;
+}
+
+.hero{
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    padding-top: 10%;
+    padding-bottom: 25%;
+    margin:auto;
+}
+
+.hero h1{
+    font-size: 5rem;
+    color: var(--text-color);
+    font-family: var(--font-header);
+}
+
+.hero h2{
+    font-size: 3rem;
+    color: var(--text-color2);
+    font-family: var(--font-header);
+}
+
+/* Button Styles */
+
+.button {
+    display: inline-block;
+    padding: 10px 20px; 
+    font-family: var(--font-body);
+    font-size: 16px; 
+    font-weight: 600; 
+    text-decoration: none; 
+    text-align: center;
+    border-radius: 25px; 
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    cursor: pointer;
+}
+
+.button-contents-container {
+    display: inline-flex;
+    align-items: center;
+}
+
+.button p {
+    color: var(--text-color);
+}
+
+.button img {
+    margin-left: 0.5rem;
+    width: 1.5rem;
+    height: 1.5rem;
+}
+
+.button i {
+    margin-left: 0.5rem;
+    width: 1.5rem;
+    height: 1.5rem;
+}
+
+
+/* LinkedIn Button Style */
+.button.linkedin {
+    border: 3px solid yellow;
+    background: var(--button-color);
+    border-radius: 0.6rem;
+
+    border: none;
+    margin-right: 0.5rem;
+}
+
+.button.linkedin:hover {
+    transform: scale(1.05); 
+}
+  
+.button.linkedin:hover img{
+    transform: scale(1.05); 
+    animation: swing 1s;
+}
+  
+  /* Resume Button Style */
+.button.resume {
+    background-color: var(--button-color);
+    border-radius: 0.6rem;
+    border: none;
+    margin-left: 0.5rem;
+}
+  
+.button.resume:hover {
+    transform: scale(1.05); 
+}
+
+.button.resume:hover img{
+    transform: scale(1.05); 
+    animation: shakeY 3s;
+}
+
+/* End of Resets */
+
+/* Typewriter Begins*/
+.text_1 {
+    animation: text1;
+}
+
+.text_2{
+    animation: text2;
+}
+
+.text_1, .text_2{
+    color: var(--text-color2);
+    font-family: var(--font-body);
+    overflow: hidden;
+    white-space: nowrap;
+    display: inline-block;
+    position: relative;
+    animation-duration: 20s;
+    animation-timing-function: steps(25, end);
+    animation-iteration-count: infinite;
+}
+
+.text_1::after, .text_2::after{
+    content: "|";
+    position: absolute;
+    right: 0;
+    animation: caret infinite;
+    animation-duration: 1s;
+    animation-timing-function: steps(1, end);
+}
+
+@keyframes typewriter {
+    0%, 100%{
+        width: 0;
+    }
+    20%, 80%{
+        width: 10.0em;
+    }
+}
+
+@keyframes caret {
+    0%, 100%{
+        opacity: 0;
+    }
+    50%{
+        opacity: 1;
+    }
+}
+
+@keyframes text2 {
+    0%, 50%, 100% {
+        width: 0;
+    }
+
+    60%, 90% {
+        width: 9.9em;
+    }
+}
+
+@keyframes text1 {
+    0%, 50%, 100% {
+        width: 0;
+    }
+
+    10%, 40% {
+        width: 9.2em;
+    }
+}
+
+/* Typewriter Ends */
+
+/* About Section Starts */
+
+.about-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: auto; 
+    margin: auto;
+}
+
+.about-header {
+    font-size: 4rem;
+    color: var(--text-color2);
+    text-align: center;
+    padding: 1rem;
+}
+
+.about-header2 {
+    font-size: 1.2rem;
+    color: var(--text-color);
+    text-align: center;
+    font-family: var(--font-header);
+}
+
+.about-header-container {
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+}
+
+.about-container {
+    width: 100%;
+    max-width: 1000px;
+}
+
+.about-item {
+    border-radius: 10px;
+    padding: 30px;
+    box-shadow: 0 4px 8px var(--border-color);
+    background-color: var(--card-background);
+    margin-bottom: 30px; 
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+    opacity: 0;
+    transform: translateX(-50px);  
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start; 
+    align-items: center; 
+    width: 400px; 
+    height: auto;
+    box-sizing: border-box;
+}
+
+
+.about-item.animate__fadeInLeft {
+    opacity: 1; 
+    transform: translateX(0); 
+    animation-duration: 1s; 
+}
+
+.about-item.left {
+    margin-left: 0;
+    transform: translateX(-50px);  
+    margin-right: auto;
+    text-align: left;
+}
+
+.about-item.right {
+    margin-left: auto;
+    transform: translateX(50px);  
+    margin-right: 0;
+    text-align: left; 
+}
+
+.about-item h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: var(--text-color2);
+}
+
+.about-item p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    color: var(--text-color);
+}
+
+
+.about-item:hover {
+    transform: scale(1.02);
+    transition: transform 0.3s ease;
+}
+
+/* About Section Ends */
+
+/* Skills Card Starts */
+
+/* Skills Section */
+.skills-section {
+    text-align: center;
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 3rem;
+    gap: 1.5rem;
+}
+
+.skills-header {
+    font-size: 4rem;
+    font-family: var(--font-header);
+    color: var(--text-color2);
+    text-align: center;
+    padding: 1rem;
+}
+
+.skills-header2 {
+    font-size: 1.2rem;
+    font-family: var(--font-header);
+    color: var(--text-color);
+    text-align: center;
+    font-family: var(--font-header);
+}
+
+.skills-header-container {
+    text-align: center;
+    padding: 3rem;
+}
+
+.skills-block{
+    background: var(--card-background);
+    backdrop-filter: blur(10px);
+    border: 1px solid var(--border-color);
+    border-radius: 10px;
+    padding: 2rem;
+    width: 32rem;
+    height: auto;
+}
+
+.skills-block h1{
+    text-align: center;
+    justify-content: center;
+    display: inline;
+    color: var(--text-color2);
+}
+
+/* Skills Container */
+.skills-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: nowrap;
+    gap: 20px;
+    padding-top: 1rem;
+}
+
+/* Skill Card */
+.skill-card {
+    background: rgba(255, 255, 255, 0.1); 
+    backdrop-filter: blur(10px);
+    border: 1px solid var(--border-color);
+    border-radius: 0.6rem;
+    padding: 0.3rem;
+    height: 4.3rem;
+    text-align: left;
+    align-items: center;
+    display: inline-flex;
+    white-space: nowrap;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.skill-card img {
+    width: 2.5rem;
+    height: 2.5rem;
+    margin-bottom: 0.6rem;
+    padding-right: 0.2rem;
+}
+
+.skill-card h3 {
+    margin: 10px 0;
+    padding-left: 0.2rem;
+    color: var(--text-color);
+    font-family: var(--font-body);
+}
+
+.skill-card:hover {
+    box-shadow: 0px 10px 20px var(--primary-shadow);
+    animation: swing 1s;
+}
+
+/* Skill Cards End */
+
+
+/* Projects Section */
+.projects-header {
+    font-size: 4rem;
+    color: var(--text-color2);
+    text-align: center;
+    padding: 1rem;
+}
+
+.projects-header2 {
+    font-size: 1.2rem;
+    color: var(--text-color);
+    text-align: center;
+    font-family: var(--font-header);
+}
+
+.projects-section {
+    padding: 40px;
+    text-align: center;
+}
+
+/* Projects Container */
+.projects-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px; 
+    max-width: 90%;
+    margin: 0 auto;
+}
+
+/* Project Cards */
+.project-card {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border: 1px solid var(--border-color);
+    opacity: 0;
+    transform: scale(0.9);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+    border-radius: 8px;
+    padding: 1rem;
+    width: 25%;
+    text-align: left;
+    box-shadow: 0px 10px 20px var(--bord);
+}
+
+.project-card.animate__zoomIn {
+    opacity: 1; 
+    transform: scale(1.0);
+    animation-duration: 1s; 
+}
+
+/* Card Images */
+.project-card img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.title-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.title-container img{
+    margin-top: 0.3rem;
+    margin-right: 0.3rem;
+    width: 2.0rem;
+    height: 2.0rem;
+}
+
+.title-container img:hover {
+    animation: swing 1s;
+}
+
+/* Card Title */
+.project-card h3{
+    margin-top: 10px;
+    color: var(--text-color2);
+}
+
+/* Card Date */
+.project-card h4{
+    color: var(--text-color);
+}
+
+/* Card Description */
+.project-card p {
+    color: var(--text-color);
+    font-size: 1rem;
+    margin-top: 0.5rem;
+    font-family: var(--font-body);
+}
+
+/* Footer Styling */
+.footer {
+    background-color: var(--bg-color);
+    background: transparent;
+    color: var(--text-color);
+    padding: 1.25rem;
+
+    text-align: center;
+    margin-top: auto;
+    bottom: 0;
+    width: 100%;
+    flex-shrink: 0;
+    z-index: 1;
+}
+
+/* Social Icons */
+.social-icons {
+    margin-top: 10px;
+}
+
+.social-icons a {
+    font-size: 1.5rem;
+    color: var(--icon-color);
+    margin: 0 10px;
+    transition: transform 0.3s, color 0.3s;
+}
+
+.social-icons a i:hover {
+    animation: swing 1s;
+}
+
+.social-icons a:hover {
+    transform: scale(1.2);
+    color: var(--hover-color);
+}
