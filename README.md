@@ -8,7 +8,7 @@ A portfolio website coded by me.
 
 ## Github repository
 
-[GitHub](https://github.com/dice43/portfolio)
+[GitHub](https://github.com/dice43/myPortfolio)
 
 ## Tech Stack
 
